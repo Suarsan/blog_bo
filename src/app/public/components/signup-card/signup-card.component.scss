@@ -1,0 +1,52 @@
+@import '../../../../colors';
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background-color: $white;
+    border-radius: 1rem;
+    padding: 5rem;
+    margin: 5rem;
+    box-shadow: $card-shadow;
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 3rem 0;
+        color: rgba($black, .5);
+    }
+    >input {
+        padding: 1.5rem;
+        margin: 1rem;
+        border-radius: .5rem;
+        border: 1px solid rgba($black, .1);
+        font-size: 1.2rem;
+        outline: 0;
+    }
+    >button {
+        font-size: 1.4rem;
+        padding: .75rem 2.5rem;
+        margin: 1rem;
+        background-color: $blue;
+        box-shadow: $card-shadow;
+        color: $white;
+        border-radius: .5rem;
+        width: max-content;
+        border: 0;
+        outline: 0;
+        text-transform: uppercase;
+        align-self: flex-end;
+        &:hover {
+            background-color: $blue;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+    >a {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $blue;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

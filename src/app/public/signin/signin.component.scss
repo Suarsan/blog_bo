@@ -1,0 +1,25 @@
+@import '../../../colors';
+section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    >article {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    >i {
+        position: absolute;
+        width: 100vw;
+        height: 100vw;
+        top: 100%;
+        right: 0;
+        border-radius: 100vw;
+        background-color: rgba($brown, .75);
+        transform: translate(60%, -50%);
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../../../colors';
+article {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    border-radius: 1rem;
+    padding: 5rem;
+    margin: 5rem;
+    >div {
+        >h3 {
+            margin: 3rem 0 1rem 0;
+        }
+        >button {
+            margin: 2rem;
+        }
+    }
+    h2 {
+        font-size: 5rem;
+        font-weight: 700;
+        margin: 0 0 3rem 0;
+        color: rgba($blue, 1);
+    }
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0 0 1rem 0;
+        color: rgba($black, .5);
+    }
+    button {
+        font-size: 1.4rem;
+        padding: .75rem 2.5rem;
+        margin: 1rem;
+        background-color: $blue;
+        box-shadow: $card-shadow;
+        color: $white;
+        border-radius: .5rem;
+        width: max-content;
+        border: 0;
+        outline: 0;
+        text-transform: uppercase;
+        align-self: flex-start;
+        &:hover {
+            background-color: $blue;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+}

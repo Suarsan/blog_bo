@@ -1,0 +1,10 @@
+<section>
+    <i></i>
+    <article>
+        <app-welcome-card [showSignUpButton]="showSignInCard" (showSignUpCardEmitter)="showSignUpCardListener($event)"></app-welcome-card>
+    </article>
+    <article>
+        <app-signin-card *ngIf="showSignInCard"></app-signin-card>
+        <app-signup-card *ngIf="!showSignInCard" (showSignInCardEmitter)="showSignInCardListener($event)"></app-signup-card>
+    </article>
+</section>

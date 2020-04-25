@@ -1,0 +1,12 @@
+section {
+    display: flex;
+    flex-direction: column;
+    >header {}
+    >main {
+        display: flex;
+        flex-direction: row;
+        >aside {}
+        >div {}
+    }
+    >footer {}
+}

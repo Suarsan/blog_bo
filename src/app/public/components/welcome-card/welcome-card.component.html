@@ -1,0 +1,8 @@
+<article>
+    <h2>Sign In</h2>
+    <h3>Manage your posts and increase your success. Click “Sign In” to accept Terms of Service & Privacy Policy. </h3>
+    <div [style.visibility]="showSignUpButton ? 'visible' : 'hidden'">
+        <h3>If you want to start creating a new profile:</h3>
+        <button (click)="showSignUpCard()">Sign Up</button>
+    </div>
+</article>

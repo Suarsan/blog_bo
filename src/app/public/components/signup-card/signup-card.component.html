@@ -1,0 +1,9 @@
+<form [formGroup]="signupForm">
+    <h3>If you already have an user account just type your user and password.</h3>
+    <input type="email" placeholder="Email" formControlName="email" autocomplete>
+    <input type="password" placeholder="Password" formControlName="password" autocomplete>
+    <input type="text" placeholder="Firstname" formControlName="firstname" autocomplete>
+    <input type="text" placeholder="Lastname" formControlName="lastname" autocomplete>
+    <button>Sign Up</button>
+    <a (click)="showSignInCard()">I already have an account</a>
+</form>

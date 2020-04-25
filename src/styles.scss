@@ -1,0 +1,11 @@
+@import 'colors';
+html,
+body {
+    width: 100%;
+    height: -webkit-fill-available;
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+    font-family: 'Manrope', sans-serif;
+    background-color: $lightblue;
+}
