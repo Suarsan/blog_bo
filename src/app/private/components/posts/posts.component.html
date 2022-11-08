@@ -1,0 +1,18 @@
+<article>
+    <header>
+        <h3>Posts</h3>
+        <a [routerLink]="['/post']">Añadir post</a>
+    </header>
+    <div>
+        <div *ngFor="let post of posts" [routerLink]="['/post', post.slug]">
+            <i [class]="getType(post.type.id)"></i>
+            <div>
+                <p>{{post?.title}}</p>
+            </div>
+            <div>
+                <p>{{post?.slug}}</p>
+            </div>
+            <i class="fas fa-trash" (click)="deletePost(post, $event)"></i>
+        </div>
+    </div>
+</article>

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "bloggraphqlbo"
+    }
+  },
+  "defaultProject": "bloggraphqlbo",
+  "cli": {
+    "analytics": false
+  }
 }

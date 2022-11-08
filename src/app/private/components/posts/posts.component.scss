@@ -1,0 +1,73 @@
+@import '../../../../colors';
+article {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 5rem 1rem 1rem;
+    >header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        >h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 1rem;
+        }
+        >a {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $blue;
+            text-decoration: none;
+        }
+    }
+    >div {
+        display: flex;
+        flex-direction: column;
+        >div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            >i {
+                font-size: 1.4rem;
+                padding: 1rem;
+                margin: 1rem;
+                opacity: .25;
+                &.blue {
+                    background-color: rgba(#5BC0EB, .25);
+                    border-radius: 3rem;
+                    color: #5BC0EB;
+                    opacity: 1;
+                }
+                &.yellow {
+                    background-color: rgba(#ffe100, .25);
+                    border-radius: 3rem;
+                    color: #ffe100;
+                    opacity: 1;
+                }
+            }
+            >div {
+                flex-grow: 1;
+                padding: 1rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                >p {
+                    font-size: 1.4rem;
+                    margin: 0;
+                }
+                &.center {
+                    text-align: center;
+                }
+            }
+            >span {
+                padding: 1rem;
+                font-size: 1.4rem;
+            }
+            &:hover {
+                background-color: rgba($blue, 0.1);
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<article>
+    <header>
+        <h3>Edit post</h3>
+        <a [routerLink]="['/']">atrás</a>
+    </header>
+    <div [formGroup]="postForm">
+        <select formControlName="type" [compareWith]="compareFn">
+            <option *ngFor="let type of types" [ngValue]="type">{{ type.content }}</option>
+        </select>
+        <input type="text" formControlName="title" placeholder="Title" class="full-width">
+        <input type="text" formControlName="slug" placeholder="Slug" class="full-width">
+        <input type="text" formControlName="metaTitle" placeholder="Meta title" class="full-width" maxlength="55">
+        <textarea type="text" formControlName="metaDescription" placeholder="Meta description" class="full-width" maxlength="160"></textarea>
+        <div>
+            <select formControlName="selectedTag" (change)="onAddTag()" [compareWith]="compareFn">
+                <option *ngFor="let tag of tags" [ngValue]="tag">{{ tag.content }}</option>
+            </select>
+            <span *ngFor="let tag of postForm.get('tags').value">{{ tag.content }}<i (click)="onDeleteTag(tag)" class="fas fa-times"></i></span>
+        </div>
+        <input type="text" formControlName="image" placeholder="Image url">
+        <div>
+            <input type="number" formControlName="readtime" placeholder="Read time">
+            <select formControlName="parent" [compareWith]="compareFn">
+                <option *ngFor="let parent of parents" [ngValue]="parent">{{ parent.title }}</option>
+            </select>
+        </div>
+        <div [formGroup]="analysisForm">
+            <input type="text" formControlName="score" placeholder="Score">
+            <input type="text" formControlName="pros" placeholder="Pros">
+            <input type="text" formControlName="cons" placeholder="Cons">
+        </div>
+        <figure>
+            <h6 *ngIf="paragraphsForm.controls.length === 0">
+                Todavia no has añadido ningún parrafo
+            </h6>
+            <div *ngFor="let paragraph of paragraphsForm.controls; let i = index" [formGroup]="paragraph">
+                <input type="number" formControlName="position" placeholder="Position">
+                <span>{{ paragraph.controls.htmlTag.value.content }}</span>
+                <span>{{ paragraph.controls.classes.value }}</span>
+                <textarea formControlName="content">{{ paragraph.controls.content.value }}</textarea>
+                <i (click)="deleteParagraph(i)" class="fas fa-backspace">x</i>
+            </div>
+        </figure>
+        <article [formGroup]="addParagraphForm">
+            <div>
+                <input type="number" formControlName="position" placeholder="Position">
+                <select formControlName="htmlTag" [compareWith]="compareFn">
+                    <option *ngFor="let htmltag of htmltags" [ngValue]="htmltag">{{htmltag.content}}</option>
+                </select>
+                <input type="text" formControlName="classes" placeholder="Classes">
+            </div>
+            <textarea type="text" formControlName="content" placeholder="Paragraph" cols="4" class="full-width"></textarea>
+            <button (click)="addParagraph()">Añadir párrafo</button>
+        </article>
+    </div>
+    <button (click)="updatePost()">Edit</button>
+</article>

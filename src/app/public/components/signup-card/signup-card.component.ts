@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user-service/user.service';
+import { tap } from 'rxjs/internal/operators/tap';
 
 @Component({
   selector: 'app-signup-card',
@@ -33,6 +34,8 @@ export class SignupCardComponent implements OnInit {
       this.signupForm.get('password').value,
       this.signupForm.get('firstname').value,
       this.signupForm.get('lastname').value)
-    .pipe().subscribe();
+    .pipe(
+      tap(res => this.showSignInCard())
+    ).subscribe();
   }
 }
