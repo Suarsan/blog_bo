@@ -99,7 +99,7 @@ export class EditPostComponent implements OnInit {
       metaDescription: data.metaDescription,
       readtime: data.readTime,
       type: data.type,
-      tags: data.tags,
+      tags: data.tags || [],
       parent: data.parent
     });
 

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { map } from 'rxjs/internal/operators';
-import { GetPosts } from 'src/app/types/getPosts.type';
 import { GetPostBySlug } from 'src/app/types/getPostBySlug.type';
 import { GetPostTypes } from 'src/app/types/getPostTypes.type';
 import { GetTags } from 'src/app/types/getTags.type';
