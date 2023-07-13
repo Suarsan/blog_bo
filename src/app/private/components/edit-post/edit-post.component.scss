@@ -145,6 +145,9 @@
             border: 0;
             outline: 0;
             align-self: flex-end;
+            &:disabled {
+                filter: opacity(.1);
+            }
         }
         .full-width {
             width: unset;

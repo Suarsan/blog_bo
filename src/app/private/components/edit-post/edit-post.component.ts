@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../../services/post-service/post.service';
-import { take } from 'rxjs/internal/operators';
-import { map } from 'rxjs/internal/operators/map';
+import { catchError, take } from 'rxjs/internal/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, FormArray } from '@angular/forms';
 import { tap } from 'rxjs/internal/operators/tap';
@@ -9,6 +8,7 @@ import { HtmlTag } from 'src/app/types/html-tag.type';
 import { PostType } from 'src/app/types/post-type.type';
 import { Tag } from 'src/app/types/tag.type';
 import { Post } from 'src/app/types/post.type';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-edit-post',
@@ -17,6 +17,7 @@ import { Post } from 'src/app/types/post.type';
 })
 export class EditPostComponent implements OnInit {
 
+  saving: boolean;
   htmltags: HtmlTag[];
   types: PostType[];
   tags: Tag[];
@@ -62,8 +63,14 @@ export class EditPostComponent implements OnInit {
   }
 
   public updatePost() {
+    this.saving = true;
     this.postService.updatePost(this.postForm, this.paragraphsForm, this.analysisForm).pipe(
-      map(res => this.router.navigate(['/']))
+      tap(res => this.router.navigate(['/'])),
+      catchError(err => {
+        console.dir(err);
+        this.saving = false;
+        return EMPTY;
+      })
     ).subscribe();
   }
 

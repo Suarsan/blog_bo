@@ -53,5 +53,5 @@
             <button (click)="addParagraph()">Añadir párrafo</button>
         </article>
     </div>
-    <button (click)="addPost()">Añadir</button>
+    <button (click)="addPost()" [disabled]="saving">Añadir</button>
 </article>

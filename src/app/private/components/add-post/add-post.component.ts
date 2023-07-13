@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../../services/post-service/post.service';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
-import { tap, map } from 'rxjs/internal/operators';
+import { tap, catchError } from 'rxjs/internal/operators';
 import { Router } from '@angular/router';
 import { PostType } from 'src/app/types/post-type.type';
 import { Tag } from 'src/app/types/tag.type';
 import { HtmlTag } from 'src/app/types/html-tag.type';
 import { Category } from '../../../types/category.type';
 import { Post } from 'src/app/types/post.type';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-add-post',
@@ -16,6 +17,7 @@ import { Post } from 'src/app/types/post.type';
 })
 export class AddPostComponent implements OnInit {
 
+  saving: boolean;
   htmltags: HtmlTag[];
   types: PostType[];
   tags: Tag[];
@@ -57,8 +59,14 @@ export class AddPostComponent implements OnInit {
   }
 
   public addPost() {
+    this.saving = true;
     this.postService.addPost(this.postForm, this.paragraphsForm, this.analysisForm).pipe(
-      map(res => this.router.navigate(['/']))
+      tap(res => this.router.navigate(['/'])),
+      catchError(err => {
+        console.dir(err);
+        this.saving = false;
+        return EMPTY;
+      })
     ).subscribe();
   }
 
