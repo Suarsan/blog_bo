@@ -5,6 +5,8 @@ import { UserService } from 'src/app/services/user-service/user.service';
 import { tap } from 'rxjs/internal/operators/tap';
 import { UserStorageService } from '../../../services/user-storage-service/user-storage.service';
 import { Author } from '../../../types/author.type';
+import { catchError } from 'rxjs/internal/operators';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-signin-card',
@@ -13,6 +15,7 @@ import { Author } from '../../../types/author.type';
 })
 export class SigninCardComponent implements OnInit {
 
+  error: string;
   signinForm = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, Validators.required)
@@ -25,10 +28,15 @@ export class SigninCardComponent implements OnInit {
   ngOnInit() { }
 
   public signIn() {
+    this.error = '';
     this.userService.signIn(this.signinForm.get('email').value, this.signinForm.get('password').value).pipe(
       tap((res: Author) => this.userStorageService.setAuthor(res)),
       tap((res: Author) => this.userStorageService.setContext(res.context)),
-      tap((res: Author) => this.router.navigate(['/']))
+      tap((res: Author) => this.router.navigate(['/'])),
+      catchError(err => {
+        this.error = err?.message;
+        return EMPTY;
+      })
     ).subscribe();
   }
 }

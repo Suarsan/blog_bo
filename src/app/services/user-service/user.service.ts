@@ -1,7 +1,6 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { UserDaoService } from 'src/app/dao/user-dao-service/user-dao.service';
 import { tap, map } from 'rxjs/internal/operators';
-import { SignIn } from 'src/app/types/signIn.type';
 import { Author } from '../../types/author.type';
 import { Observable } from 'rxjs';
 
