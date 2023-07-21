@@ -16,6 +16,9 @@ import { PostsComponent } from './private/components/posts/posts.component';
 import { AddPostComponent } from './private/components/add-post/add-post.component';
 import { EditPostComponent } from './private/components/edit-post/edit-post.component';
 import { SettingsComponent } from './private/components/settings/settings.component';
+import { SocialComponent } from './private/components/social/social.component';
+import { SocialAccountsComponent } from './private/components/social-accounts/social-accounts.component';
+import { SocialAccountComponent } from './private/components/social-account/social-account.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { SettingsComponent } from './private/components/settings/settings.compon
     PostsComponent,
     AddPostComponent,
     EditPostComponent,
-    SettingsComponent
+    SettingsComponent,
+    SocialComponent,
+    SocialAccountsComponent,
+    SocialAccountComponent
   ],
   imports: [
     BrowserModule,
