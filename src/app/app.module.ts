@@ -16,9 +16,11 @@ import { PostsComponent } from './private/components/posts/posts.component';
 import { AddPostComponent } from './private/components/add-post/add-post.component';
 import { EditPostComponent } from './private/components/edit-post/edit-post.component';
 import { SettingsComponent } from './private/components/settings/settings.component';
-import { SocialComponent } from './private/components/social/social.component';
-import { SocialAccountsComponent } from './private/components/social-accounts/social-accounts.component';
-import { SocialAccountComponent } from './private/components/social-account/social-account.component';
+import { RrssComponent } from './private/components/rrss/rrss.component';
+import { AddRrssComponent } from './private/components/add-rrss/add-rrss.component';
+import { EditRrssComponent } from './private/components/edit-rrss/edit-rrss.component';
+import { RrssConnectionComponent } from './private/components/rrss-connection/rrss-connection.component';
+import { AddRrssDiffusionComponent } from './private/components/add-rrss-diffusion/add-rrss-diffusion.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,11 @@ import { SocialAccountComponent } from './private/components/social-account/soci
     AddPostComponent,
     EditPostComponent,
     SettingsComponent,
-    SocialComponent,
-    SocialAccountsComponent,
-    SocialAccountComponent
+    RrssComponent,
+    RrssConnectionComponent,
+    AddRrssComponent,
+    EditRrssComponent,
+    AddRrssDiffusionComponent
   ],
   imports: [
     BrowserModule,

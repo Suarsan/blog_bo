@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { EditRrssComponent } from './edit-rrss.component';
 
-import { SocialComponent } from './social.component';
-
-describe('SocialComponent', () => {
-  let component: SocialComponent;
-  let fixture: ComponentFixture<SocialComponent>;
+describe('EditRrssComponent', () => {
+  let component: EditRrssComponent;
+  let fixture: ComponentFixture<EditRrssComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SocialComponent ]
+      declarations: [ EditRrssComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SocialComponent);
+    fixture = TestBed.createComponent(EditRrssComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

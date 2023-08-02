@@ -1,0 +1,15 @@
+<article>
+    <header>
+        <h3>Edit rrss connection</h3>
+        <a [routerLink]="['/rrss']">atrás</a>
+    </header>
+    <div [formGroup]="rrssConnectionForm">
+            <input type="text" formControlName="name" placeholder="Account alias" readonly>
+            <select formControlName="rrssType" [compareWith]="compareFn">
+                <option *ngFor="let rrssType of rrssTypes" [ngValue]="rrssType">{{ rrssType.name }}</option>
+            </select>
+            <textarea formControlName="tokens" rows="10"></textarea>      
+    </div>
+    <button (click)="deleteRrssConnection()" [disabled]="saving">Delete</button>
+    <button (click)="updateRrssConnection()" [disabled]="saving">Edit</button>
+</article>

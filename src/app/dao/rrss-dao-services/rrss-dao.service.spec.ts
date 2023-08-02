@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { RrssDaoService } from './rrss-dao.service';
 
-import { TwitterDaoService } from './twitter-dao.service';
-
-describe('TwitterDaoService', () => {
-  let service: TwitterDaoService;
+describe('RrssDaoService', () => {
+  let service: RrssDaoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TwitterDaoService);
+    service = TestBed.inject(RrssDaoService);
   });
 
   it('should be created', () => {

@@ -1,0 +1,27 @@
+<article>
+    <header>
+        <h3>Rrss connections</h3>
+        <a [routerLink]="['/rrss-connection']">Añadir conexión</a>
+    </header>
+    <div>
+        <app-rrss-connection *ngFor="let rrssConnection of rrssConnections" [rrssConnection]="rrssConnection" (click)="editRrssConnection(rrssConnection)"></app-rrss-connection>
+    </div>
+    <header>
+        <h3>Rrss diffusions</h3>
+        <a [routerLink]="['/rrss-diffusion']">Añadir difusión</a>
+    </header>
+    <div>
+        <div *ngFor="let rrssDiffusion of rrssDiffusions">
+            <div  [routerLink]="['/diffusion', rrssDiffusion.name]">
+                <i *ngIf="rrssDiffusion?.rrssConnection?.type?.name === 'twitter'" class="fas fa-bullhorn"></i>
+                <div>
+                    <p>{{rrssDiffusion?.name}}</p>
+                </div>
+                <div>
+                    <p>{{rrssDiffusion?.content}}</p>
+                </div>
+            </div>
+            <i class="fas fa-trash" (click)="deleteRrssDiffusion(rrssDiffusion)"></i>
+        </div>
+    </div>
+</article>

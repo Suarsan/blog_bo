@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  apiURL: 'https://api.camisetasbasicas.online',
-  frontURL: 'https://camisetasbasicas.online/'
+  restURL: 'http://localhost:5000/',
+  apiURL: 'https://api.descubrelavera.com',
+  frontURL: 'https://descubrelavera.com/'
 };

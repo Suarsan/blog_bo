@@ -1,0 +1,14 @@
+<article>
+    <header>
+        <h3>Add rrss connection</h3>
+        <a [routerLink]="['/rrss']">atrás</a>
+    </header>
+    <div [formGroup]="rrssConnectionForm">
+        <input type="text" formControlName="name" placeholder="Account alias">
+        <select formControlName="rrssType" [compareWith]="compareFn">
+            <option *ngFor="let rrssType of rrssTypes" [ngValue]="rrssType">{{ rrssType.name }}</option>
+        </select>
+        <textarea formControlName="tokens" rows="10"></textarea>      
+    </div>
+    <button (click)="addRrss()" [disabled]="saving">Añadir</button>
+</article>

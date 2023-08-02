@@ -1,0 +1,87 @@
+@import '../../../../colors';
+:host {
+    >article {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 5rem 1rem 1rem;
+        >header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            >h3 {
+                margin-left: 1rem;
+            }
+            >a {
+                font-size: 1.4rem;
+                font-weight: 500;
+                color: $blue;
+                text-decoration: none;
+            }
+        }
+        >div {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            >input {
+                font-size: 1.4rem;
+                padding: 1rem 1.5rem;
+                margin: 1rem .5rem 1rem 0;
+                background-color: $white;
+                border-radius: .5rem;
+                box-shadow: none;
+                border: 0;
+                width: fit-content;
+                outline: 0;
+                &[type="text"] {
+                    min-width: 250px;
+                }
+            }
+            >select {
+                position: relative;
+                font-size: 1.4rem;
+                padding: 1rem 1.5rem;
+                margin: 1rem .5rem 1rem 0;
+                background-color: $white;
+                border-radius: .5rem;
+                box-shadow: none;
+                border: 0;
+                width: fit-content;
+                outline: 0;
+                min-width: 250px;
+                appearance: none;
+            }
+            >textarea {
+                font-size: 1.4rem;
+                padding: 1rem 1.5rem;
+                margin: 1rem .5rem 1rem 0;
+                background-color: $white;
+                border-radius: .5rem;
+                box-shadow: none;
+                border: 0;
+                outline: 0;
+            }
+        }
+        >button {
+            font-size: 1.4rem;
+            padding: 1rem 1.5rem;
+            margin: 1rem .5rem;
+            background-color: $blue;
+            color: $white;
+            border-radius: .5rem;
+            box-shadow: none;
+            border: 0;
+            outline: 0;
+            align-self: flex-end;
+            &:disabled {
+                filter: opacity(.1);
+            }
+        }
+        h6 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin: 5rem;
+            text-align: center;
+        }
+    }
+}

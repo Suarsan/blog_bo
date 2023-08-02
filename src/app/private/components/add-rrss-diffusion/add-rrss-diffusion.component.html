@@ -1,0 +1,15 @@
+<article>
+    <header>
+        <h3>Add diffusion</h3>
+        <a [routerLink]="['/rrss']">atrás</a>
+    </header>
+    <div [formGroup]="rrssDiffusionForm">
+        <input type="text" formControlName="name" placeholder="Diffusion alias">
+        <textarea formControlName="content" rows="10" placeholder="Diffusion content"></textarea>      
+        <input type="datetime-local" formControlName="date" placeholder="Diffusion schedule">
+        <select formControlName="rrssConnection" [compareWith]="compareFn">
+            <option *ngFor="let rrssConnection of rrssConnections" [ngValue]="rrssConnection">{{ rrssConnection.type.name }} - {{ rrssConnection.name }}</option>
+        </select>
+    </div>
+    <button (click)="addDiffusion()" [disabled]="saving">Añadir</button>
+</article>

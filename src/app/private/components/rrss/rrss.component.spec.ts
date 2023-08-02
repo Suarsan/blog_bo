@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RrssComponent } from './rrss.component';
 
-import { SocialAccountComponent } from './social-account.component';
-
-describe('SocialAccountComponent', () => {
-  let component: SocialAccountComponent;
-  let fixture: ComponentFixture<SocialAccountComponent>;
+describe('RrssComponent', () => {
+  let component: RrssComponent;
+  let fixture: ComponentFixture<RrssComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SocialAccountComponent ]
+      declarations: [ RrssComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SocialAccountComponent);
+    fixture = TestBed.createComponent(RrssComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

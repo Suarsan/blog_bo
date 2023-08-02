@@ -1,0 +1,27 @@
+@import '../../../../colors';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    > div {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgba($blue, .5);
+        border-radius: 2rem;
+        padding: 2rem;
+        > h4 {
+            margin: 0 0 1rem 0;
+        }
+        > p {
+            font-size: 1.2rem;
+            margin: 0 0 1rem 0;
+            color: $blue;
+        }
+        &:hover {
+            background-color: rgba($blue, .1);
+            cursor: pointer;
+        }
+    }
+
+}
