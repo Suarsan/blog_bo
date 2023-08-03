@@ -61,6 +61,9 @@ article {
                     border-radius: 1rem;
                     cursor: pointer;
                 }
+                &.disabled {
+                    opacity: .5;
+                }
             }
             i {
                 font-size: 1.4rem;

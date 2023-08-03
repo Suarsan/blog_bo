@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EMPTY } from 'rxjs';
-import { catchError, take, tap } from 'rxjs/internal/operators';
+import { catchError, map, take, tap } from 'rxjs/internal/operators';
 import { RrssService } from 'src/app/services/rrss-services/rrss-service.service';
 import { RrssConnection } from 'src/app/types/rrssConnection.type';
 import { RrssDiffusion } from 'src/app/types/rrssDiffusion.type';
@@ -15,6 +15,7 @@ export class RrssComponent implements OnInit {
 
   rrssConnections: Array<RrssConnection>;
   rrssDiffusions: Array<RrssDiffusion>;
+  now = new Date();
 
   constructor(private rrssService: RrssService,
               private router: Router) { }
@@ -48,6 +49,7 @@ export class RrssComponent implements OnInit {
   private _getRrssDiffusions() {
     this.rrssService.getRrssDiffusions().pipe(
       take(1),
+      map((res: Array<RrssDiffusion>) => res.sort((a, b) => a.date < b.date ? 1 : a.date > b.date ? -1 : 0)),
       tap((res: Array<RrssDiffusion>) => this.rrssDiffusions = res)
     ).subscribe();
   }

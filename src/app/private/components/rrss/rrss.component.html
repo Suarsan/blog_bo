@@ -12,13 +12,13 @@
     </header>
     <div>
         <div *ngFor="let rrssDiffusion of rrssDiffusions">
-            <div  [routerLink]="['/diffusion', rrssDiffusion.name]">
+            <div [routerLink]="['/diffusion', rrssDiffusion.name]" [class.disabled]="rrssDiffusion?.date < now">
                 <i *ngIf="rrssDiffusion?.rrssConnection?.type?.name === 'twitter'" class="fas fa-bullhorn"></i>
                 <div>
                     <p>{{rrssDiffusion?.name}}</p>
                 </div>
                 <div>
-                    <p>{{rrssDiffusion?.content}}</p>
+                    <p>{{rrssDiffusion?.date | date }}</p>
                 </div>
             </div>
             <i class="fas fa-trash" (click)="deleteRrssDiffusion(rrssDiffusion)"></i>

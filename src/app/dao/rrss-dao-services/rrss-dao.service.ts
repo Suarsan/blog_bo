@@ -53,8 +53,7 @@ export class RrssDaoService {
         getRrssDiffusions {
           id
           name
-          content
-          uuid
+          date
           rrssConnection{
             name
             type{
