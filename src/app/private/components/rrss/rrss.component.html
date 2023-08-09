@@ -18,7 +18,7 @@
                     <p>{{rrssDiffusion?.name}}</p>
                 </div>
                 <div>
-                    <p>{{rrssDiffusion?.date | date }}</p>
+                    <p>{{rrssDiffusion?.date | date: 'dd/MM/yy hh:mm:ss' }}</p>
                 </div>
             </div>
             <i class="fas fa-trash" (click)="deleteRrssDiffusion(rrssDiffusion)"></i>
