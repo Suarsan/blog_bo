@@ -21,6 +21,7 @@ import { AddRrssComponent } from './private/components/add-rrss/add-rrss.compone
 import { EditRrssComponent } from './private/components/edit-rrss/edit-rrss.component';
 import { RrssConnectionComponent } from './private/components/rrss-connection/rrss-connection.component';
 import { AddRrssDiffusionComponent } from './private/components/add-rrss-diffusion/add-rrss-diffusion.component';
+import { FilterByPipe } from './pipes/filter-by.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AddRrssDiffusionComponent } from './private/components/add-rrss-diffusi
     RrssConnectionComponent,
     AddRrssComponent,
     EditRrssComponent,
-    AddRrssDiffusionComponent
+    AddRrssDiffusionComponent,
+    FilterByPipe
   ],
   imports: [
     BrowserModule,

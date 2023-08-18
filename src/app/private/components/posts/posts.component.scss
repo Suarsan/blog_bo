@@ -20,6 +20,14 @@ article {
             text-decoration: none;
         }
     }
+    > input {
+        width: 300px;
+        font-size: 1.6rem;
+        padding: .5rem .25rem;
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: .25rem;
+    }
     >div {
         display: flex;
         flex-direction: column;

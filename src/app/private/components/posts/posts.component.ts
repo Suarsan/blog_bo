@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../../../services/post-service/post.service';
+import { FormControl, FormGroup } from '@angular/forms';
 import { map, take } from 'rxjs/internal/operators';
 import { tap } from 'rxjs/internal/operators/tap';
-import { Router } from '@angular/router';
+import { PostService } from '../../../services/post-service/post.service';
 
 @Component({
   selector: 'app-posts',
@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 export class PostsComponent implements OnInit {
 
   posts;
+  searchForm = new FormGroup({
+    search: new FormControl()
+  });
 
   constructor(private postService: PostService) { }
 
@@ -25,15 +28,6 @@ export class PostsComponent implements OnInit {
       take(1),
       map(res => this.posts = res)
     ).subscribe();
-  }
-
-  public getType(typeId) {
-    switch (typeId) {
-      case '1':
-        return 'fas fa-microscope blue';
-      case '4':
-        return 'fas fa-folder-open yellow';
-    }
   }
 
   public listenRefreshPosts() {
