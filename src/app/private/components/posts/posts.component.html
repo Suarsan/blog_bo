@@ -7,7 +7,7 @@
         <input type="text" formControlName="search">
     </ng-container>
     <div>
-        <div *ngFor="let post of posts | filterBy: searchForm.get('search').value " [routerLink]="['/post', post.slug]">
+        <div *ngFor="let post of posts | filterBy: [searchForm.get('search').value, ['slug', 'title']]" [routerLink]="['/post', post.slug]">
             <div>
                 <p>{{post?.title}}</p>
             </div>
